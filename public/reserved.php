@@ -1,16 +1,14 @@
 <!DOCTYPE html>
 <html lang="ja">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/reserved.css">
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-    <title>トップ</title>
-
-</head>
-
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="css/reserved.css">
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+        <title>トップ</title>
+    </head>
 <body>
 
 <div>
@@ -27,7 +25,7 @@
         $r_num = htmlspecialchars($_POST['r_num']);
 
         // reserveddb.phpを読み込み、データベースから情報を取得する
-        $url = 'http://localhost/Base/public/db/reserveddb.php'; // reserveddb.phpのURL
+        $url = 'http://localhost/Monitor/public/db/reserveddb.php'; // reserveddb.phpのURL
         $data = array('r_num' => $r_num);
 
         // cURLセッションの初期化
@@ -46,34 +44,28 @@
 
         // JSONを連想配列に変換
         $reservation = json_decode($response, true);
-
-        if ($reservation) {
-            echo '<script>var showModal = true;</script>';
-            echo '<div id="myModal" class="modal">';
-            echo '<div class="modal-content">';
-            echo '<span class="close">&times;</span>';
-            echo '<p>この予約内容でよろしいですか？</p>';
-            echo '<p>予約番号: ' . htmlspecialchars($reservation['reserve_num']) . '</p>';
-            echo '<p>運送会社: ' . htmlspecialchars($reservation['b_name']) . '</p>';
-            echo '<p>車両番号: ' . htmlspecialchars($reservation['car_num']) . '</p>';
-            echo '<p>受注No: ' . htmlspecialchars($reservation['contract_num']) . '</p>';
-            echo '<p>出発地点: ' . htmlspecialchars($reservation['departure_point']) . '</p>';
-            echo '<p>到着地点: ' . htmlspecialchars($reservation['arrival_point']) . '</p>';
-            echo '<p>保存温度: ' . htmlspecialchars($reservation['temperature']) . '</p>';
-            echo '<p>荷主名: ' . htmlspecialchars($reservation['shipper_name']) . '</p>';
-
-            //完了ボタン
-            echo '<button id="updateButton" data-reserve-num="' . htmlspecialchars($reservation['reserve_num']) . '">予約受付</button>';
-
-        } else {
-            echo '<p>入力された予約番号は見つかりませんでした。</p>';
-        }
-    } else {
-        echo '';
     }
 ?>
 
-
+<?php if (isset($reservation)): ?>
+    <script>var showModal = true;</script>
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <p>この予約内容でよろしいですか？</p>
+            <p>受注No: <?php echo htmlspecialchars($reservation['contract_num']); ?></p>
+            <p>運送会社: <?php echo htmlspecialchars($reservation['b_name']); ?></p>
+            <p>車両番号: <?php echo htmlspecialchars($reservation['car_num']); ?></p>
+            <p>出発地点: <?php echo htmlspecialchars($reservation['departure_point']); ?></p>
+            <p>到着地点: <?php echo htmlspecialchars($reservation['arrival_point']); ?></p>
+            <p>保存温度: <?php echo htmlspecialchars($reservation['temperature']); ?></p>
+            <p>荷主名: <?php echo htmlspecialchars($reservation['shipper_name']); ?></p>
+            <button id="updateButton" data-contract-num="<?php echo htmlspecialchars($reservation['contract_num']); ?>">予約受付</button>
+        </div>
+    </div>
+    <?php elseif ($_SERVER['REQUEST_METHOD'] === 'POST'): ?>
+        <p>入力された予約番号は見つかりませんでした。</p>
+    <?php endif; ?>
 
 <script>
     document.addEventListener('DOMContentLoaded', function() {
@@ -97,7 +89,7 @@
 
             // ボタンがクリックされたときの処理
             updateButton.addEventListener("click", function() {
-                var reserveNum = updateButton.getAttribute('data-reserve-num'); // ボタンに設定された予約番号を取得
+                var reserveNum = updateButton.getAttribute('data-contract-num'); // ボタンに設定された予約番号を取得
 
                 var xhr = new XMLHttpRequest();
                 xhr.open("POST", "db/updatedb.php", true); // 更新用のPHPファイル
@@ -114,14 +106,11 @@
                         }
                     }
                 };
-                xhr.send("reserve_num=" + encodeURIComponent(reserveNum)); // 更新する予約番号を送信する
+                xhr.send("contract_num=" + encodeURIComponent(reserveNum)); // 更新する予約番号を送信する
             });
         }
     });
 </script>
-
-
-
 
 </body>
 </html>

@@ -5,7 +5,7 @@
     $r_num = htmlspecialchars($_POST['r_num']);
 
     // SQLクエリの準備と実行
-    $sql = "SELECT * FROM t_reservation WHERE reserve_num = :r_num";
+    $sql = "SELECT * FROM t_reservation WHERE contract_num = :r_num";
     $statement = $dbh->prepare($sql);
     $statement->bindParam(':r_num', $r_num);
     $statement->execute();
