@@ -1,0 +1,171 @@
+* {
+  margin: 0;
+}
+
+body {
+  background-color: #f0f0f0;
+  width: 100%;
+  height: 100vh;
+}
+
+.header {
+  position: fixed;
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: start;
+  background-color: #e0e0e0;
+}
+
+.home {
+  padding: 20px;
+  font-size: large;
+  font-weight: bold;
+  text-decoration: none;
+  color: black;
+}
+.res_window {
+  padding: 20px;
+  font-size: large;
+  font-weight: bold;
+  text-decoration: none;
+  color: black;
+}
+.res_window:hover {
+  color: #999;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgba(152, 152, 152, 0.7);
+  width: 100%;
+  height: 100%;
+  z-index: 10;
+}
+
+.res_modal {
+  display: none;
+  position: fixed;
+  z-index: 15;
+  top: 20%;
+  left: 50%;
+  width: 90%;
+  height: 70%;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  -webkit-transform: translate(-50%, -10%);
+  transform: translate(-50%, -10%);
+  color: #333;
+  font-size: 1.3rem;
+}
+
+.con {
+  padding-top: 80px;
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  margin: 0 auto;
+}
+.con h2 {
+  color: #333;
+  font-size: 2rem;
+  font-weight: bold;
+  width: 90%;
+  margin: 0 0 10px 0;
+}
+.con div {
+  width: 100%;
+}
+
+.title2 {
+  margin-left: 8%;
+  margin-bottom: 30px;
+  margin-top: 30px;
+  font-size: 2rem;
+}
+
+form {
+  margin: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: start;
+}
+
+.form-container {
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+}
+.form-container div {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-bottom: 15px;
+}
+.form-container2 {
+  margin-left: 70px;
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+}
+.form-container2 div {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-bottom: 15px;
+}
+
+form label {
+  font-size: 1.3rem;
+}
+
+form input {
+  width: 40%;
+  border: 1px solid #bbb;
+  border-radius: 5px;
+}
+
+.button {
+  width: 100%;
+  padding: 14px;
+  margin-top: 20px;
+  font-size: large;
+  background-color: #999;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.button:hover {
+  background-color: #d0d0d0;
+}
+
+.scrollable-container {
+  width: 100%;
+  max-height: 80vh;
+  overflow-y: scroll;
+}
+
+table {
+  max-width: 100vw;
+  justify-content: center;
+  border-collapse: collapse;
+  overflow-x: auto;
+}
+
+th,
+td {
+  border: 1px solid #bbb;
+  padding: 8px;
+  text-align: left;
+}
+
+th {
+  background-color: #ddd;
+}

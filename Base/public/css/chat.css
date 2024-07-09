@@ -1,0 +1,156 @@
+* {
+  margin: 0;
+}
+
+body {
+  background-color: #f0f0f0;
+  width: 100%;
+  height: 100vh;
+}
+
+.header {
+  position: fixed;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+  background-color: #e0e0e0;
+}
+
+.header a {
+  padding: 20px;
+  text-decoration: none;
+  color: #000;
+  font-size: large;
+  font-weight: bold;
+}
+.header a:hover {
+  /* background-color: #999; */
+  color: #999;
+}
+
+main {
+  display: flex;
+  width: 80%;
+  height: 80%;
+  padding-top: 100px;
+  margin: auto;
+  justify-content: space-around;
+  align-items: start;
+}
+
+.driverselect {
+  width: 15%;
+  height: 100%;
+  background-color: #fff;
+  border-radius: 8px;
+  padding: 20px;
+}
+
+.driverselect div {
+  height: 60px;
+  width: 100%;
+  border-bottom: solid 1px #999;
+}
+
+.driverselect a {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  max-width: 100%;
+  height: 100%;
+  padding-left: 10px;
+  text-decoration: none;
+  color: #333;
+  font-size: large;
+  font-weight: bold;
+}
+
+.driverselect p {
+  font-size: 0.9rem;
+  color: #999;
+}
+
+.driverselect a:hover {
+  background-color: #f0f0f0;
+}
+hr {
+  background-color: #000;
+}
+
+.chat-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 60%;
+  height: 100%;
+  background-color: #fff;
+  border-radius: 8px;
+  padding: 20px;
+}
+
+.chcon {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+}
+.chcon::-webkit-scrollbar {
+  display: none;
+}
+
+.form {
+  padding-top: 10px;
+  border-top: solid 1px #ccc;
+  width: 100%;
+}
+
+.base {
+  align-self: flex-end;
+  margin: 5px;
+  background-color: #d1e7dd;
+  padding: 10px;
+  border-radius: 5px;
+  max-width: 60%;
+}
+
+.driver {
+  align-self: flex-start;
+  margin: 5px;
+  background-color: #f8d7da;
+  padding: 10px;
+  border-radius: 5px;
+  max-width: 60%;
+}
+
+form {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  bottom: 0px;
+  width: 100%;
+}
+
+form input[type="text"] {
+  width: 100%;
+  padding: 8px;
+  border: none;
+  font-size: 1.1rem;
+}
+
+input[type="text"]:focus {
+  outline: none;
+}
+
+input[type="text"]::placeholder {
+  color: #ccc;
+}
+
+form input[type="submit"] {
+  display: none;
+}
+
+.sendimg {
+  width: 37px;
+  height: 37px;
+}

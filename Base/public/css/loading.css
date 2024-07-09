@@ -1,0 +1,106 @@
+* {
+  margin: 0;
+}
+
+.header {
+  position: fixed;
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: start;
+  background-color: #e0e0e0;
+}
+
+.home {
+  padding: 20px;
+  font-size: large;
+  font-weight: bold;
+  text-decoration: none;
+  color: black;
+}
+
+body {
+  background-color: #f0f0f0;
+  width: 100%;
+  height: 100vh;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.container div {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: end;
+}
+
+.container div div {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+}
+
+.second {
+  margin-left: 30px;
+}
+.second h2 {
+  color: #333;
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+.container p {
+  font-size: small;
+}
+
+.secondtable {
+}
+
+table th {
+  padding: 8px 30px;
+  border: solid 1px black;
+  background-color: rgb(237, 235, 100);
+  font-size: large;
+  font-weight: bold;
+}
+table td {
+  position: relative;
+  padding: 8px 30px;
+  border: solid 1px black;
+  background: white;
+  font-size: large;
+}
+#kisu {
+  background: #eee;
+}
+
+.button {
+  position: absolute;
+  width: 23px;
+  height: 23px;
+  right: 3px;
+  top: 3px;
+  background-color: #f0f0f0;
+  border: solid 2px #333;
+}
+.button:hover {
+  background-color: #ccc;
+}
+img {
+  height: 80%;
+  position: relative;
+  top: 2px;
+}
+
+#pagenumber {
+  background-color: #e0e0e0;
+  border: none;
+  font-weight: 100;
+  font-size: 75%;
+  text-align: right;
+}
