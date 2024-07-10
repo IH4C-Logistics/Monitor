@@ -8,7 +8,7 @@ $reserve_num = isset($_POST['contract_num']) ? $_POST['contract_num'] : '';
 if (!empty($reserve_num)) {
     try {
         // SQL文の準備
-        $sql = "UPDATE t_reservation SET status = '到着受付済' WHERE contract_num = :contract_num";
+        $sql = "UPDATE t_reservation SET status = '0' WHERE contract_num = :contract_num";
         $stmt = $dbh->prepare($sql);
 
         // パラメータのバインド
