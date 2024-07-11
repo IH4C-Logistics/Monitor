@@ -20,7 +20,7 @@
                 予約済
             </div>
         </a>
-        <a href="reservation.php">
+        <a href="reserve_no.php">
             <div class="button">
                 予約なし
             </div>
