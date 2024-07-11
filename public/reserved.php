@@ -47,7 +47,7 @@
     }
 ?>
 
-<?php if (isset($reservation)): ?>
+<?php if (isset($reservation) && !empty($reservation)): ?>
     <script>var showModal = true;</script>
     <div id="myModal" class="modal">
         <div class="modal-content">
@@ -63,9 +63,9 @@
             <button id="updateButton" data-contract-num="<?php echo htmlspecialchars($reservation['contract_num']); ?>">予約受付</button>
         </div>
     </div>
-    <?php elseif ($_SERVER['REQUEST_METHOD'] === 'POST'): ?>
-        <p>入力された予約番号は見つかりませんでした。</p>
-    <?php endif; ?>
+<?php elseif ($_SERVER['REQUEST_METHOD'] === 'POST'): ?>
+    <p>入力された予約番号は見つかりませんでした。</p>
+<?php endif; ?>
 
 <script>
     document.addEventListener('DOMContentLoaded', function() {
