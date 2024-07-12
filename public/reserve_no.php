@@ -12,8 +12,8 @@
     <form id="inputForm">
 
         <!-- 入力フォームの項目 -->
-        <label for="date">作業日を入力してください</label><br>
-        <input type="date" id="date" name="date" required><br><br>
+        <label for="date">作業日選択してください</label><br>
+        <input type="date" id="date" name="date" min="<?php echo date('Y-m-d'); ?>" required><br><br>
 
         <label for="p_num">携帯番号を入力してください</label><br>
         <input type="text" id="p_num" name="p_num" required><br><br>
