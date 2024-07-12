@@ -11,13 +11,14 @@
     </head>
 <body>
 
-<div>
-    <h2>予約済受付画面</h2>
-    <form method="post" action="">
-        <label for="r_num">予約番号を入力してください。</label>
-        <input type="text" id="r_num" name="r_num" required>
-        <button type="submit">送信</button>
-    </form>
+<div class="containar">
+    <div>
+        <form method="post" action="">
+            <label for="r_num">予約番号を入力してください。</label>
+            <input type="text" id="r_num" name="r_num" required>
+            <button type="submit">送信</button>
+        </form>
+    </div>
 </div>
 
 <?php
@@ -25,7 +26,7 @@
         $r_num = htmlspecialchars($_POST['r_num']);
 
         // reserveddb.phpを読み込み、データベースから情報を取得する
-        $url = 'http://localhost/Monitor/public/db/reserveddb.php'; // reserveddb.phpのURL
+        $url = 'http://localhost/program/LOGISTICS/Monitor/public/db/reserveddb.php'; // reserveddb.phpのURL
         $data = array('r_num' => $r_num);
 
         // cURLセッションの初期化

@@ -113,7 +113,7 @@
             var case_num = document.getElementById('case').value;
 
             // データの送信
-            fetch('/Monitor/public/db/reserve_no_db.php', {
+            fetch('/program/LOGISTICS/Monitor/public/db/reserve_no_db.php', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/x-www-form-urlencoded',
@@ -155,7 +155,7 @@
 
         // 「遷移する」ボタンのクリックイベント
         document.getElementById('navigateButton').onclick = function() {
-            window.location.href = 'http://localhost/Monitor/public'; // 遷移するURLを指定する
+            window.location.href = 'http://localhost/program/LOGISTICS/Monitor/public'; // 遷移するURLを指定する
         }
 
         // モーダル外をクリックした場合にモーダルを閉じる処理
