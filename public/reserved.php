@@ -114,6 +114,8 @@
                             // 更新が成功した場合の処理
                             alert("予約を受け付けました。");
                             modal.style.display = "none"; // モーダルを非表示にするなどの処理を追加することも可能
+                            // index.phpにリダイレクト
+                            location.href = "index.php";
                         } else {
                             // 更新が失敗した場合の処理
                             alert("更新に失敗しました。");
