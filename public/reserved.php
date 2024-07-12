@@ -25,7 +25,20 @@
         $r_num = htmlspecialchars($_POST['r_num']);
 
         // reserveddb.phpを読み込み、データベースから情報を取得する
-        $url = 'http://localhost/Monitor/public/db/reserveddb.php'; // reserveddb.phpのURL
+        // サーバーのホスト名を取得
+        $host = $_SERVER['HTTP_HOST'];
+
+        // スクリプトのパスを取得
+        $script_path = dirname($_SERVER['SCRIPT_NAME']);
+
+        // ベースURLを構築
+        $base_url = "http://$host$script_path";
+
+        // 相対パス
+        $relative_path = '/db/reserveddb.php';
+
+        $url = $base_url . $relative_path;
+
         $data = array('r_num' => $r_num);
 
         // cURLセッションの初期化
