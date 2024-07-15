@@ -20,7 +20,7 @@
                 チェックイン
             </div>
         </a>
-        <a href="reservation.php">
+        <a href="checkout.php">
             <div class="button">
                 チェックアウト
             </div>
