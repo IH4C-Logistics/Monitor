@@ -30,6 +30,7 @@
                         location.href = "index.php";
                     } else {
                         alert(response.message);
+                        location.href = "index.php";
                     }
                 },
                 error: function(xhr, status, error) {
