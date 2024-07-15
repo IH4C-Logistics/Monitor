@@ -69,11 +69,16 @@
             <p>この予約内容でよろしいですか？</p>
             <p>受注No: <?php echo htmlspecialchars($reservation['contract_num']); ?></p>
             <p>運送会社: <?php echo htmlspecialchars($reservation['b_name']); ?></p>
-            <p>車両番号: <?php echo htmlspecialchars($reservation['car_num']); ?></p>
-            <p>出発地点: <?php echo htmlspecialchars($reservation['departure_point']); ?></p>
             <p>到着地点: <?php echo htmlspecialchars($reservation['arrival_point']); ?></p>
-            <p>保存温度: <?php echo htmlspecialchars($reservation['temperature']); ?></p>
-            <p>荷主名: <?php echo htmlspecialchars($reservation['shipper_name']); ?></p>
+            <p>到着日付: <?php echo htmlspecialchars($reservation['a_date']); ?></p>
+            <p>到着予定時間: <?php echo htmlspecialchars($reservation['a_time']); ?></p>
+            <p>運送会社名: <?php echo htmlspecialchars($reservation['trans_comp']); ?></p>
+            <p>ドライバー名: <?php echo htmlspecialchars($reservation['driver_name']); ?></p>
+            <p>電話番号: <?php echo htmlspecialchars($reservation['tel_num']); ?></p>
+            <p>車両番号: <?php echo htmlspecialchars($reservation['car_num']); ?></p>
+            <p>車格: <?php echo htmlspecialchars($reservation['vehicle_size']); ?></p>
+            <p>品名等: <?php echo htmlspecialchars($reservation['product_name']); ?></p>
+            <p>数量(ケース数): <?php echo htmlspecialchars($reservation['quantity']); ?></p>
             <button id="updateButton" data-contract-num="<?php echo htmlspecialchars($reservation['contract_num']); ?>">予約受付</button>
         </div>
     </div>
