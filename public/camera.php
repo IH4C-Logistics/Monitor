@@ -41,6 +41,10 @@
             <div class="chcon" id="chatContent">
                 <img src="data:image/png;base64,<?php echo base64_encode($qrCodeImage); ?>" alt="QR Code" />
             </div>
+
+            <!-- モニターのホーム画面に戻るボタン -->
+            <a href="../public">戻る</a>
+
         </div>
 
     </main>
