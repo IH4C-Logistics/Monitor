@@ -25,6 +25,11 @@
                 チェックアウト
             </div>
         </a>
+        <a href="camera.php">
+            <div class="button">
+                拠点カメラ
+            </div>
+        </a>
     </div>
     
 
