@@ -51,6 +51,7 @@
         <div class="modal-content">
             <span class="close">&times;</span>
             <h2>入力内容確認</h2>
+            <p id="modalRandomNumber"></p>
             <p id="modalDate"></p>
             <p id="modalPNum"></p>
             <p id="modalBName"></p>
@@ -59,7 +60,6 @@
             <p id="modalVehicleSize"></p>
             <p id="modalProductName"></p>
             <p id="modalCase"></p>
-            <p id="modalRandomNumber"></p>
             <button id="confirmButton">上記の内容で受付をする。</button>
             <button id="navigateButton" style="display: none;">受付番号を確認しました。</button>
         </div>
